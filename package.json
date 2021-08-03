@@ -1,0 +1,33 @@
+{
+  "name": "the-value",
+  "version": "1.0.0",
+  "description": "javascript value utility. functional, semantic and neat.",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc --reporter=html --reporter=text ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lakca/the-value.git"
+  },
+  "keywords": [
+    "value",
+    "functional",
+    "semantic",
+    "neat",
+    "utility"
+  ],
+  "author": "lakca",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lakca/the-value/issues"
+  },
+  "homepage": "https://github.com/lakca/the-value#readme",
+  "devDependencies": {
+    "ava": "^3.15.0",
+    "nyc": "^15.1.0"
+  },
+  "dependencies": {
+    "getter-cache": "^1.1.0"
+  }
+}
