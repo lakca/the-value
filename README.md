@@ -6,6 +6,11 @@
 npm i -S the-value
 ```
 
+- [The Value](#the-value)
+  - [Usage](#usage)
+  - [Addon](#addon)
+  - [Add utils from lodash/underscore/...](#add-utils-from-lodashunderscore)
+
 ## Usage
 
 ```js
@@ -25,7 +30,15 @@ Value(200).is(Value.Constant(200)) // true
 
 > All original provided functions in [here](./utils.js)
 
-### Addon
+## Addon
+
+> ! All functions should have the first parameter to be the target value (to conduct operations).
+
+`addon(utilsObject: object, keys?: string[]|Record<string, string>, type?: 'getter', notCacheGetter?: boolean=false)`
+  - `utilsObject`, properties owner.
+  - `keys`, list properties should be added. If ignored, all own enumerable properties will added. Properties will be renamed with the option is not an array.
+  - `type`, if set to be `getter`, indicate the function type properties should be converted to getter properties.
+  - `notCacheGetter`, if set to be `true`, indicate the getter properties should not be cached.
 
 All of own enumerable properties:
 
@@ -90,4 +103,13 @@ v.Square // count is 1
 v.Square // count is 2
 v.Square // count is 3
 v.Square // count is 4
+```
+
+## Add utils from lodash/underscore/...
+
+```js
+const underscore = require('underscore')
+const Value = require('the-value')
+  .addon(underscore, ['pick', 'omit', 'shuffle'])
+  .addon(underscore, { isElement: 'Element' }, 'getter')
 ```
