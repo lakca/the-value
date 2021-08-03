@@ -1,7 +1,7 @@
 {
   "name": "the-value",
   "version": "1.0.0",
-  "description": "javascript value utility. functional, semantic and neat.",
+  "description": "value utility. functional, semantic and neat.",
   "main": "index.js",
   "scripts": {
     "test": "nyc --reporter=html --reporter=text ava"
