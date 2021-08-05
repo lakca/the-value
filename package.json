@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "description": "value utility. functional, semantic and neat.",
   "main": "index.js",
+  "browserslist": [
+    "defaults"
+  ],
   "scripts": {
-    "test": "nyc --reporter=html --reporter=text ava"
+    "test": "nyc --reporter=html --reporter=text ava",
+    "build": "browserify index.js -o dist/index.min.js -s TheValue -t [ babelify --presets [ @babel/preset-env ] ] -p tinyify"
   },
+  "jsdelivr": "dist/index.min.js",
+  "unpkg": "dist/index.min.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/lakca/the-value.git"
@@ -24,8 +30,13 @@
   },
   "homepage": "https://github.com/lakca/the-value#readme",
   "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
     "ava": "^3.15.0",
-    "nyc": "^15.1.0"
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "nyc": "^15.1.0",
+    "tinyify": "^3.0.0"
   },
   "dependencies": {
     "getter-cache": "^1.1.0"
